@@ -28,10 +28,8 @@ int main(int argc, char *argv[])
 	/*
 	*buff = malloc(buff_size * sizeof(char));
 	*if (!buff)
-	*{
 	*	fprintf(stderr, "Error: malloc failed\n");
 	*	fclose(fd), exit(EXIT_FAILURE);
-	*}
 	**/
 	while (fgets(buff, buff_size, fd) != NULL)
 	{
