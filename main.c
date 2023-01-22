@@ -10,7 +10,6 @@
 int main(int argc, char *argv[])
 {
 	int buff_size = 1024;
-	FILE *fd;
 	char *buff, *temp = NULL;
 	unsigned int d = 0;
 	void (*p)(stack_t **stack, unsigned int line_number);
@@ -41,8 +40,10 @@ int main(int argc, char *argv[])
 			if (!p)
 			{
 				fprintf(stderr, "L%d: unknown instruction%s\n", d, temp);
-				free(buff), exit(EXIT_FAILURE);
+				fclose(fd), free(buff), exit(EXIT_FAILURE);
 			}
+			if (!stack)
+				free(buff), fclose(fd), exit(EXIT_FAILURE);
 			p(&stack, d);
 		}
 	}
