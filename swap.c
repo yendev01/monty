@@ -9,7 +9,7 @@
 
 void get_swap(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 {
-	stack_t *temp1, *temp2, *t1 = *stack;
+	stack_t *temp1, *t1 = *stack;
 	int count = 0;
 
 	while (t1)
@@ -23,12 +23,15 @@ void get_swap(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 
-	temp1 = *stack;
-	*stack = (*stack)->next;
-	temp2 = (*stack)->next;
-	temp1->next = temp2;
-	temp2->prev = temp1;
-	(*stack)->next = temp1;
-	(*stack)->prev = NULL;
-}
+	temp1 = (*stack)->next;
+	(*stack)->next = temp1->next;
+	(*stack)->prev = temp1;
+	temp1->prev = NULL;
 
+	if (temp1->next)
+	{
+		(temp1->next)->prev = *stack;
+	}
+	temp1->next = *stack;
+	*stack = temp1;
+}

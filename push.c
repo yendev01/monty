@@ -45,5 +45,4 @@ void get_push(stack_t **stack, unsigned int line_number)
 		newHead->prev = NULL;
 		*stack = newHead;
 	}
-	free(newHead);
 }

@@ -9,6 +9,7 @@
 #include <string.h>
 #include <unistd.h>
 
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -25,6 +26,7 @@ typedef struct stack_s
         struct stack_s *next;
 } stack_t;
 
+stack_t *stack;
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -57,4 +59,5 @@ void get_pchar(stack_t **stack, unsigned int line_num);
 void get_pstr(stack_t **stack, unsigned int line_num);
 void get_rotl(stack_t **stack, unsigned int line_num);
 void get_rotr(stack_t **stack, unsigned int line_num);
+void _free(void);
 #endif
