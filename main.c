@@ -38,12 +38,7 @@ int main(int argc, char *argv[])
 		{
 			if (temp[0] == '#')
 				continue;
-			p = get_func(temp);
-			if (!p)
-			{
-				fprintf(stderr, "L%d: unknown instruction%s\n", d, temp);
-				fclose(fd), exit(EXIT_FAILURE);
-			}
+			p = get_func(temp, d);
 			p(&stack, d);
 		}
 	}

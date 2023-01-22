@@ -5,7 +5,7 @@
   * @s: ...
   * Return: ...
   */
-void (*get_func(char *s))(stack_t **stack, unsigned int line_number)
+void (*get_func(char *s, unsigned int d))(stack_t **stack, unsigned int line_number)
 {
 	int i = 0;
 
@@ -28,13 +28,13 @@ void (*get_func(char *s))(stack_t **stack, unsigned int line_number)
 		{NULL, NULL},
 	};
 
-	for (; i < 16; i++)
+	for (; func_list[i].opcode; i++)
 	{
-		if (strcmp(func_list[i].opcode, (char *)s) == 0)
+		if (strcmp(func_list[i].opcode, s) == 0)
 		{
 			return (func_list[i].f);
 		}
 	}
-
-	return (NULL);
+	fprintf(stderr, "L%d: unknown instruction %s\n", d, s);
+	fclose(fd), _free(), exit(EXIT_FAILURE);
 }

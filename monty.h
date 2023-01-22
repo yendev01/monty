@@ -44,7 +44,7 @@ typedef struct instruction_s
 
 
 
-void (*get_func(char *s))(stack_t **stack, unsigned int line_number);
+void (*get_func(char *s, unsigned int d))(stack_t **stack, unsigned int line_number);
 void get_push(stack_t **stack, unsigned int line_number);
 void get_pall(stack_t **stack, unsigned int line_num);
 void get_pint(stack_t **stack, unsigned int line_num);
