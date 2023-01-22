@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 			p = get_func(temp);
 			if (!p)
 			{
-				fprintf(stderr, "L%d: unknown instruction\n", d);
+				fprintf(stderr, "L%d: unknown instruction%s\n", d, temp);
 				free(buff), exit(EXIT_FAILURE);
 			}
 			p(&stack, d);

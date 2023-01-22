@@ -29,15 +29,16 @@ void (*get_func(char *s))(stack_t **stack, unsigned int line_number)
 	};
 
 	if (s[0] == '#')
-		exit(0);
-
+	{
+		_free();
+		exit(EXIT_FAILURE);
+	}
 	for (; i < 16; i++)
 	{
 		if (strcmp(func_list[i].opcode, (char *)s) == 0)
 		{
 			return (func_list[i].f);
 		}
-		continue;
 	}
 
 	return (NULL);
