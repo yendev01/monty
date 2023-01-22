@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int buff_size = 1024;
-	char *buff, *temp = NULL;
+	char buff[1024], *temp = NULL;
 	unsigned int d = 0;
 	void (*p)(stack_t **stack, unsigned int line_number);
 
@@ -25,12 +25,14 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[argc - 1]);
 		fclose(fd), exit(EXIT_FAILURE);
 	}
-	buff = malloc(buff_size * sizeof(char));
-	if (!buff)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		fclose(fd), exit(EXIT_FAILURE);
-	}
+	/*
+	*buff = malloc(buff_size * sizeof(char));
+	*if (!buff)
+	*{
+	*	fprintf(stderr, "Error: malloc failed\n");
+	*	fclose(fd), exit(EXIT_FAILURE);
+	*}
+	**/
 	while (fgets(buff, buff_size, fd) != NULL)
 	{
 		d++, temp = strtok(buff, " \n\t\r");
@@ -40,13 +42,11 @@ int main(int argc, char *argv[])
 			if (!p)
 			{
 				fprintf(stderr, "L%d: unknown instruction%s\n", d, temp);
-				fclose(fd), free(buff), exit(EXIT_FAILURE);
+				fclose(fd), exit(EXIT_FAILURE);
 			}
-			if (!stack)
-				free(buff), fclose(fd), exit(EXIT_FAILURE);
 			p(&stack, d);
 		}
 	}
-	free(buff), _free(), fclose(fd);
+	_free(), fclose(fd);
 	return (0);
 }
