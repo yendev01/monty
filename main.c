@@ -38,6 +38,8 @@ int main(int argc, char *argv[])
 		d++, temp = strtok(buff, " \n\t\r");
 		if (temp)
 		{
+			if (temp[0] == '#')
+				continue;
 			p = get_func(temp);
 			if (!p)
 			{
