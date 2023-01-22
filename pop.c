@@ -18,6 +18,9 @@ void get_pop(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 	*stack = (*stack)->next;
-	(*stack)->prev = NULL;
+	if (t1->next)
+	{
+		t1->next->prev = NULL;
+	}
 	free(t1);
 }
