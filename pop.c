@@ -13,7 +13,8 @@ void get_pop(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 
 	if (!*stack)
 	{
-		fprintf(stderr, "L%u: can't pop an empty stack", line_num);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_num);
+		_free();
 		exit(EXIT_FAILURE);
 	}
 	*stack = (*stack)->next;

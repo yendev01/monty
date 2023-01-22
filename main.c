@@ -46,6 +46,6 @@ int main(int argc, char *argv[])
 			p(&stack, d);
 		}
 	}
-	free(buff), fclose(fd);
+	free(buff), _free(), fclose(fd);
 	return (0);
 }

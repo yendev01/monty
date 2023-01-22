@@ -13,9 +13,8 @@ void get_pint(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 
 	if (!*stack)
 	{
-		fprintf(stderr, "L%u: can't pint, stack empty", line_num);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_num);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", t1->n);
-	free(t1);
 }

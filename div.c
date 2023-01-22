@@ -1,5 +1,6 @@
 #include "monty.h"
 
+
 /**
   * get_div - ...
   * @stack:...
@@ -19,14 +20,16 @@ void get_div(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 	}
 	if (count < 2)
 	{
-		fprintf(stderr, "L%u: can't div, stack too short", line_num);
+		fprintf(stderr, "L%u: can't div, stack too short\n", line_num);
+		_free();
 		exit(EXIT_FAILURE);
 	}
 
 	temp1 = (*stack)->n;
 	if (temp1 == 0)
 	{
-		fprintf(stderr, "L%u: division by zero", line_num);
+		fprintf(stderr, "L%u: division by zero\n", line_num);
+		_free();
 		exit(EXIT_FAILURE);
 	}
 	temp2 = ((*stack)->next)->n;

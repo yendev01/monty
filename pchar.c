@@ -13,7 +13,8 @@ void get_pchar(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 
 	if (!*stack)
 	{
-		fprintf(stderr, "L%u: can't pchar, stack empty", line_num);
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_num);
+		_free();
 		exit(EXIT_FAILURE);
 	}
 

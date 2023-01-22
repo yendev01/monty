@@ -19,7 +19,8 @@ void get_swap(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 	}
 	if (count < 2)
 	{
-		fprintf(stderr, "L%u: can't swap, stack too short", line_num);
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line_num);
+		_free();
 		exit(EXIT_FAILURE);
 	}
 
