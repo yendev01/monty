@@ -9,6 +9,7 @@
 #include <string.h>
 #include <unistd.h>
 
+typedef unsigned int ui;
 extern FILE *fd;
 FILE *fd;
 /**
@@ -22,9 +23,9 @@ FILE *fd;
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 stack_t *stack;
@@ -38,13 +39,13 @@ stack_t *stack;
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 
 
-void (*get_func(char *s, unsigned int d))(stack_t **stack, unsigned int line_number);
+void (*get_func(char *s, ui d))(stack_t **stack, unsigned int line_number);
 void get_push(stack_t **stack, unsigned int line_number);
 void get_pall(stack_t **stack, unsigned int line_num);
 void get_pint(stack_t **stack, unsigned int line_num);

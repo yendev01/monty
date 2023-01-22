@@ -3,9 +3,10 @@
 /**
   * get_func - gets function
   * @s: ...
+  * @d: ...
   * Return: ...
   */
-void (*get_func(char *s, unsigned int d))(stack_t **stack, unsigned int line_number)
+void (*get_func(char *s, ui d))(stack_t **stack, unsigned int line_number)
 {
 	int i = 0;
 
