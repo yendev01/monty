@@ -12,12 +12,12 @@ void get_swap(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 	stack_t *temp1, *t1 = *stack;
 	int count = 0;
 
-	while (t1)
+	while (t1->next)
 	{
 		count++;
 		t1 = t1->next;
 	}
-	if (count < 2)
+	if (count < 2 || !*stack)
 	{
 		fprintf(stderr, "L%u: can't swap, stack too short\n", line_num);
 		_free();

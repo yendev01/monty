@@ -25,7 +25,7 @@ void get_pstr(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 		num = t1->n;
 		if (num > 0 && num <= 255)
 		{
-			printf("%c\n", num);
+			printf("%c", num);
 		}
 		else if (num == 0)
 		{
