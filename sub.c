@@ -17,7 +17,7 @@ void get_sub(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 		count++;
 		t1 = t1->next;
 	}
-	if (count < 1 || !*stack)
+	if (count < 2 || !*stack)
 	{
 		fprintf(stderr, "L%u: can't sub, stack too short\n", line_num);
 		_free();
