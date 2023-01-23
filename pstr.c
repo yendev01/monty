@@ -19,7 +19,7 @@ void get_pstr(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 
 	else
 	{
-		while (t1)	
+		while (t1)
 		{
 			num = t1->n;
 			if (num > 0 && num <= 255)
