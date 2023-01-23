@@ -10,9 +10,9 @@
 void get_sub(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 {
 	stack_t *t1 = *stack;
-	int count = 1, temp1, temp2;
+	int count = 0, temp1, temp2;
 
-	while (t1->next)
+	while (t1)
 	{
 		count++;
 		t1 = t1->next;

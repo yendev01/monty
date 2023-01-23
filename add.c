@@ -17,7 +17,7 @@ void get_add(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 		count++;
 		t1 = t1->next;
 	}
-	if (count < 1)
+	if (count < 2)
 	{
 		fprintf(stderr, "L%u: can't add, stack too short\n", line_num);
 		_free();
