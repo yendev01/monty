@@ -26,6 +26,7 @@ void get_pchar(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 	else
 	{
 		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_num);
+		_free();
 		exit(EXIT_FAILURE);
 	}
 }

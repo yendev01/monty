@@ -11,7 +11,7 @@ void get_rotr(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 {
 	stack_t *temp1, *temp2, *temp3;
 
-	if (!*stack || !((*stack)->next))
+	if (!*stack || ((*stack)->next == NULL))
 	{
 		;
 	}

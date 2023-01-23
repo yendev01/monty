@@ -11,7 +11,7 @@ void get_rotl(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 {
 	stack_t *temp1, *temp2;
 
-	if (!*stack || !((*stack)->next))
+	if (!*stack || (*stack)->next == NULL)
 	{
 		;
 	}
