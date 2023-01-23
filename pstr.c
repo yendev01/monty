@@ -31,5 +31,6 @@ void get_pstr(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 			}
 			t1 = t1->next;
 		}
+		printf("\n");
 	}
 }
