@@ -15,27 +15,25 @@ void get_pstr(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 	if (!*stack)
 	{
 		printf("\n");
+		_free(), exit(EXIT_FAILURE);
 	}
 
-	else
+	while (t1)
 	{
-		while (t1)
+		num = t1->n;
+		if (num > 0 && num <= 255)
 		{
-			num = t1->n;
-			if (num > 0 && num <= 255)
-			{
-				printf("%c", num);
-			}
-			else if (num == 0)
-			{
-				break;
-			}
-			else
-			{
-				_free();
-				exit(EXIT_FAILURE);
-			}
-			t1 = t1->next;
+			printf("%c", num);
 		}
+		else if (num == 0)
+		{
+			break;
+		}
+		else
+		{
+			_free();
+			exit(EXIT_FAILURE);
+		}
+		t1 = t1->next;
 	}
 }
