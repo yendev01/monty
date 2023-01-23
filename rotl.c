@@ -16,16 +16,19 @@ void get_rotl(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 		;
 	}
 
-	temp1 = *stack;
-	*stack = temp1->next;
-
-	temp2 = temp1;
-	while (temp2->next)
+	else
 	{
-		temp2 = temp2->next;
+		temp1 = *stack;
+		*stack = temp1->next;
+
+		temp2 = temp1;
+		while (temp2->next)
+		{
+			temp2 = temp2->next;
+		}
+		temp1->prev = temp2;
+		temp2->next = temp1;
+		temp1->next = NULL;
+		(*stack)->prev = NULL;
 	}
-	temp1->prev = temp2;
-	temp2->next = temp1;
-	temp1->next = NULL;
-	(*stack)->prev = NULL;
 }
