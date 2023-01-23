@@ -12,7 +12,7 @@ void get_swap(stack_t **stack, __attribute__((unused)) unsigned int line_num)
 	stack_t *temp1, *t1 = *stack;
 	int count = 0;
 
-	while (t1->next)
+	while (t1)
 	{
 		count++;
 		t1 = t1->next;
